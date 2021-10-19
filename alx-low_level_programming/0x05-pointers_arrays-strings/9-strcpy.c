@@ -5,18 +5,22 @@
 *
 *
 *
-*
-*
-*
 */
 char *_strcpy(char *dest, char *src)
 {
-int i = 0;
+int i;
+int j;
+int k;
+i = 0;
 while (src[i] != '\0')
 {
-dest[i] = src[i];
 i++;
 }
-dest[i] = '\0';
+k = i - 1;
+for (j = 0; j <= k; j++)
+{
+dest[j] = src[j];
+}
+dest[j] = '\0';
 return (dest);
 }

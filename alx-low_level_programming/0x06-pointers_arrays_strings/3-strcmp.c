@@ -3,24 +3,16 @@
 *
 *
 *
-*
-*
-*
-*
-*
-*
-*
 */
 int _strcmp(char *s1, char *s2)
 {
-if (*s1 == *s2)
+int i = 0;
+int j = 0;
+while (s1[i] == s2[j])
 {
-s1++;
-s2++;
-return (0);
+i++;
+j++;
+return (s1[i] - s2[j]);
 }
-else
-{
-return (*s1 - *s2);
-}
+return (s1[i] - s2[i]);
 }

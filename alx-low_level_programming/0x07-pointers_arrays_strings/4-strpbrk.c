@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
 *
 *
@@ -6,25 +7,24 @@
 *
 *
 *
-*
-*
-*
 */
+
 char *_strpbrk(char *s, char *accept)
 {
-int i = 0;
-int j = 0;
-while (*(s + i) != '\0')
-{
-while (*(accept + j) != '\0')
-{
-if ((*s + i) == *(accept + j))
-{
-return (s);
-}
-j++;
-}
-i++;
-}
-return ('\0');
+	int i;
+
+	while (*s != '\0')
+	{
+		i = 0;
+		while (accept[i] != '\0')
+		{
+			if (*s == accept[i])
+				return (s);
+			i++;
+		}
+		if (!(*accept))
+			return (0);
+	s++;
+	}
+	return (s);
 }
