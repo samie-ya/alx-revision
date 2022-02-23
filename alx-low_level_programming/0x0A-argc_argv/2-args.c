@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+
 /**
 *
 *
@@ -8,14 +9,15 @@
 *
 *
 *
-*
 */
-int main(int argc, char *argv[])
+
+int main(int ac, char *av[])
 {
-int i = 0;
-for (i = 0; i < argc; i++)
-{
-printf("%s\n", argv[i]);
-}
-return (0);
+	int i;
+
+	for (i = 0; i < ac; i++)
+	{
+		printf("%s\n", av[i]);
+	}
+	return (0);
 }

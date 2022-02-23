@@ -21,15 +21,13 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	l2 = _len(n2);
 
 	max = (l1 < l2) ? (l2) : (l1);
-
-	for (i = 0; i < l1; i++)
-		n1[i] = n1[l1 - i - 1] - '0';
-
-	for (i = 0; i < l2; i++)
-		n2[i] = n2[l2 - i - 1] - '0';
+	for (i = 0; i < max; i++)
+		n1[i] = n1[max - i - 1] - '0';
+	for (i = 0; i < max; i++)
+ 		n2[i] = n2[max - i - 1] - '0';
 
 	carry = 0;
-	for (k = max; k >= 0; k--)
+	for (k = 0; k < max; k++)
 	{
 		r[k] = (n1[k] + n2[k] + carry) % 10;
 		if ((n1[k] + n2[k] + carry) >= 10)

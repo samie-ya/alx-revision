@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+
 /**
 *
 *
@@ -8,53 +9,36 @@
 *
 *
 *
-*
-*
-*
 */
+
 char *str_concat(char *s1, char *s2)
 {
-char *dest;
-int i = 0;
-int j = 0;
-int k = 0;
-int len;
-if (s1 == 0)
-{
-s1 = "";
-}
-if (s2 == 0)
-{
-s2 = "";
-}
-while (s1[i] != '\0')
-{
-i++;
-}
-while (s2[j] != '\0')
-{
-j++;
-}
-len = i + j + 1;
-dest = malloc(sizeof(char) * len);
-if (dest == 0)
-{
-return (0);
-free(dest);
-}
-if (k < len)
-{
-for (i = 0; s1[i] != '\0'; i++)
-{
-dest[k] = s1[i];
-k++;
-}
-for (j = 0; s2[j] != '\0'; j++)
-{
-dest[k] = s2[j];
-k++;
-}
-}
-dest[k] = '\0';
-return (dest);
+	int i, j;
+	char *dest;
+
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	i = 0;
+	while (s1[i] != '\0')
+		i++;
+	j = 0;
+	while (s2[j] != '\0')
+		j++;
+	dest= malloc(sizeof(char) * (i + j + 1));
+	if (dest == NULL)
+		return (NULL);
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		dest[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		dest[i + j] = s2[j];
+		j++;
+	}
+	dest[i + j] = '\0';
+	return (dest);
 }

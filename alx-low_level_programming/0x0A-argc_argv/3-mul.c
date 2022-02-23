@@ -8,29 +8,21 @@
 *
 *
 *
-*
-*
 */
-int main(int argc, char *argv[])
+
+int main(int ac, char *av[])
 {
-int i;
-int j;
-int k;
-int res;
-if (argc > 2)
-{
-for (i = 0; i < argc; i++)
-{
-j = atoi(argv[1]);
-k = atoi(argv[2]);
-res = j *k;
-}
-printf("%d\n", res);
-}
-else
-{
-printf("Error\n");
-return (1);
-}
-return (0);
+	int res, j, k;
+
+
+	if (ac != 3)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	j = atoi(av[1]);
+	k = atoi(av[2]);
+	res = j * k;
+	printf("%d\n", res);
+	return (0);
 }
